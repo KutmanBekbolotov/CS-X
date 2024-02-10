@@ -28,36 +28,6 @@ body {
     position: relative; /* Add this line */
 }
 
-.main-header {
-    position: relative;
-}
-
-.course-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.course-container__title {
-    color: var(--text);
-}
-
-.navigation {
-    position: relative;
-    top: 20px;
-    right: 20px;
-}
-
-.nav-button {
-    background-color: transparent;
-    border: none;
-    color: var(--text);
-    font-family: raleway_f, sans-serif;
-    font-size: 16px; /* Adjust as needed */
-    cursor: pointer;
-    margin-left: 10px; /* Adjust as needed */
-}
-
 .main-header::after {
     content: '';
     position: absolute;
@@ -70,6 +40,125 @@ body {
     background-position: center;
     bottom: calc(var(--index) * -4.5);
 }
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000; /* Цвет фона контейнера */
+}
+
+.course-container__title {
+    color: #fff; /* Цвет текста названия курсов */
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    color: #fff; /* Цвет текста кнопок */
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.courses {
+    margin: 40px 0;
+}
+
+.container {
+    display: flex;
+}
+
+.course {
+    flex: 0 0 20%;
+    margin-right: 20px;
+}
+
+.course img {
+    width: 40%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.course img {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
+}
+
+.course h3{
+    color: #fff;
+}
+
+.modal-content h2{
+    color: #fff;
+}
+
+.modal-content p{
+    color: #fff;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transform: translateY(250px);
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный цвет для оверлея */
+    z-index: 999; /* Устанавливаем z-index, чтобы оверлей был под вкладкой шрифтов, но поверх остального контента */
+}
+
+#courseInfo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Включаем вертикальный скролл, если контент слишком длинный */
+    background-color: rgba(0, 0, 0, 0.8); /* Прозрачный черный цвет */
+    color: white;
+    padding: 20px;
+    z-index: 1000; /* Устанавливаем z-index, чтобы вкладка шрифтов была поверх остального контента */
+}
+
+.course-info-content {
+    max-width: 80%;
+    margin: 0 auto; /* Центрируем внутренний контент */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.close-btn:hover {
+    color: red; /* Цвет кнопки при наведении */
+}
+
+
 
 .layers {
     height: 100vh;

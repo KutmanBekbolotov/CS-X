@@ -4,44 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CS-X</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="libs/gsap/gsap.min.js" defer></script>
     <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
     <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/ButtonScripts.js" defer></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="content">
-            <header class="main-header">
-                <div class="course-container">
-                    <h1 class="course-container__title">CS-X</h1>
-                </div>
-                <div class="navigation">
-                    <button class="nav-button">О нас</button>
-                    <button class="nav-button">Список курсов</button>
-                    <button class="nav-button">Наш инстаграм</button>
-                </div>
-                <div class="layers">
-                    <div class="layer__header">
-                        <div class="layers__caption">Welcome to courses of computer since</div>
-                        <div class="layers__title">CS-X</div>
-                    </div>
-                    <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
-                    <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
-                    <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
-                </div>
-            </header>
-        
-            <article class="main-article" style="background-image: url(img/dungeon.jpg);">
-                <div class="main-article__content">
-                    <h2 class="main-article__header">To be continued</h2>
-                    <p class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
-                </div>
-                <div class="copy">© By Kutman</div>
-            </article>
-        </div>
+
+<div id="overlay" class="overlay"></div>
+
+<div id="shortInfoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="shortCourseTitle"></h2>
+        <p id="shortCourseDescription"></p>
     </div>
+</div>
+
+<div id="courseInfo" class="course-info">
+    <div class="course-info-content">
+        <button id="closeBtn" class="close-btn" onclick="closeModal()">&times;</button>
+        <h2 id="courseTitle"></h2>
+        <div id="courseDescription" class="course-description"></div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="content">
+        <!-- Новый контейнер с названием курсов и кнопками -->
+        <div class="top-container">
+            <div class="course-container">
+                <h1 class="course-container__title">BSW-CS</h1>
+            </div>
+            <div class="navigation">
+                <button id="courseListBtn" class="nav-button" onclick="showCourseList()">Course List</button>
+                <button class="nav-button">About Us</button>
+                <button class="nav-button">Instagram</button>
+            </div>
+        </div>
+
+        <section class="courses">
+            <div class="container">
+                <div class="course" onclick="showShortInfoModal('CS50', 'CS50 — Курс о основах программирования. Языки программирования: C/C++, HTML/CSS, scretch. Длительность: 12 недель');">
+                    <img src="img/CS.jpeg" alt="Курс 1" style="width: 40%; height: auto;">
+                    <h3>CS50</h3>
+                </div>
+                <div class="course" onclick="showShortInfoModal('CS51', 'CS51 — Продвинутый уровень С/С++. Языки программирования: С/С++. Длительность: 8 недель');">
+                    <img src="img/DSA.jpeg" alt="Курс 2" style="width: 40%; height: auto;">
+                    <h3>CS51</h3>
+                </div>
+            </div>
+        </section>
+
+        <header class="main-header">
+            <div class="layers">
+                <div class="layer__header">
+                    <div class="layers__caption">Welcome to courses of computer since</div>
+                    <div class="layers__title">CS-X</div>
+                </div>
+                <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
+                <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+                <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+            </div>
+        </header>
+
+        <article class="main-article" style="background-image: url(img/dungeon.jpg);">
+            <div class="main-article__content">
+                <h2 class="main-article__header">To be continued</h2>
+                <p class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
+            </div>
+            <div class="copy">© By Kutman</div>
+        </article>
+    </div>
+</div>
+
 </body>
 </html>
