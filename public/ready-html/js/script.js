@@ -29,9 +29,6 @@ function showShortInfoModal(title, description) {
     courseTitle.textContent = title;
     courseDescription.textContent = description;
 
-    var imgRect = courseImg.getBoundingClientRect();
-    modal.style.top = (imgRect.bottom + window.pageYOffset) + 'px';
-    modal.style.left = imgRect.left + 'px';
-
     modal.style.display = 'block';
 }
+

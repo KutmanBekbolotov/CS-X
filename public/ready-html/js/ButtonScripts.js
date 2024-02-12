@@ -1,19 +1,10 @@
 var overlay = document.getElementById('overlay');
-var courseInfo = document.getElementById('courseInfo');
 var showCourseListBtn = document.getElementById('courseListBtn');
-var closeBtn = document.getElementById('closeBtn'); // Добавлено
 
 showCourseListBtn.addEventListener('click', function() {
-    overlay.style.display = 'block';
-    courseInfo.style.display = 'block';
+    overlay.style.display = 'block'; // Отображаем темную вкладку
 });
 
 overlay.addEventListener('click', function() {
-    overlay.style.display = 'none';
-    courseInfo.style.display = 'none';
-});
-
-closeBtn.addEventListener('click', function() { // Добавлено
-    overlay.style.display = 'none';
-    courseInfo.style.display = 'none';
+    overlay.style.display = 'none'; // Закрываем темную вкладку при клике на нее
 });
